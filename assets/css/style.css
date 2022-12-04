@@ -164,6 +164,8 @@ body.dark-theme {
 
 .grid {
   display: grid;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .main {
@@ -312,18 +314,6 @@ body.dark-theme {
   color: var(--body-color);
 }
 
-@media screen and (max-width: 767px) {
-  .nav__menu {
-    position: fixed;
-    background-color: var(--container-color);
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100%;
-    padding: 6rem 2rem 3.5rem;
-    transition: .3s;
-  }
-}
 
 .nav__list {
   display: flex;
@@ -466,7 +456,7 @@ body.dark-theme {
   padding: 7rem 0;
 }
 
-.producs--info-description {
+.products--info-description {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -513,28 +503,20 @@ body.dark-theme {
   margin-bottom: .5rem;
   text-align: center;
   font-size: 2rem;
-  color: aqua;
+  color: white;
 }
 
 .products__stock {
-  text-align: center;
-  display: inline-block;
-  font-size: var(--small-font-size);
-  font-weight: 600;
-  margin: 0 0 2rem;
-
-}
-
-.products__content {
-  grid-template-columns: 200px;
-  gap: 2rem;
+  display: flex;
   justify-content: center;
-
 }
+
+
 
 .products__card {
   background-color: var(--container-color);
   border-radius: .5rem;
+  margin: 20px;
 }
 
 .products__img {
@@ -748,15 +730,11 @@ body.dark-theme {
   border: 1px solid var(--border-color);
 }
 
-@media screen and (min-width: 400px) {
-  .cart__card {
-    grid-template-columns: .5fr 1fr;
-  }
 
-  .cart__box {
-    width: clamp(80px, 100%, 150px);
-  }
+.cart__box {
+  width: clamp(80px, 100%, 150px);
 }
+
 
 .cart__img {
   width: 100%;
@@ -902,6 +880,25 @@ body.dark-theme {
   }
 }
 
+@media screen and (min-width: 400px) {
+  .cart__card {
+    grid-template-columns: .5fr 1fr;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--container-color);
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 6rem 2rem 3.5rem;
+    transition: .3s;
+  }
+}
+
 /* For medium devices */
 @media screen and (min-width: 576px) {
   .home__img-bg {
@@ -911,6 +908,11 @@ body.dark-theme {
   .products__content {
     grid-template-columns: repeat(2, 200px);
     column-gap: 3rem;
+    margin: 30px;
+  }
+
+  .products__card {
+    margin: 20px;
   }
 
   .footer__container {
@@ -1015,7 +1017,7 @@ body.dark-theme {
 
   .products__content {
     grid-template-columns: repeat(3, 262px);
-    justify-content: initial;
+    justify-content: center;
     column-gap: 5rem;
   }
 
